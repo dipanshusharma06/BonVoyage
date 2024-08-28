@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-accordion>
+    <div *ngFor="let userPackage of userPackages">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{userPackage.packageCity}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{userPackage.packageName}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="expansion-div">
+              {{userPackage.packageDesc}}
+              <button mat-mini-fab color="warn" (click)="deletePackageFromBookings(userPackage.packageID)"><mat-icon>delete</mat-icon></button>
+            </div>
+            <div class="expansion-itenary" *ngFor="let packageItenary of userPackage.packageItenaryList">
+                <div class="expansion-itenary-header">
+                  <p>{{packageItenary.day}} : {{packageItenary.title}}</p>
+                </div>
+                {{packageItenary.activities}}
+            </div>
+            
+          </mat-expansion-panel>
+    </div>
+
+  </mat-accordion>
+</div>
+

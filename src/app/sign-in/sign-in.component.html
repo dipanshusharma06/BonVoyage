@@ -1,0 +1,48 @@
+<!-- <div class="first">
+    <img class="overlay" src="/background-photo/Screenshot 2024-06-09 070444.png" alt="Small Photo">
+</div> -->
+<section>
+    <div class="quote-container">
+        <i>"Adventure awaits just beyond the login. Let's explore the world together!"</i>
+    </div>
+    <div class="form-container">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="tag">
+                <h1 >Welcome Back To BonVoyage!</h1>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label> Email</mat-label>
+                    <input matInput type="email" formControlName="email" placeholder="Your email">
+                  </mat-form-field>
+                <!-- <label>
+                    Email:
+                    <input type="email" formControlName="email" placeholder="Your email">
+                </label> -->
+                <div *ngIf="submissionAttempted && myForm.get('email')?.invalid && (myForm.get('email')?.touched || showError)" class="error">
+                    email cannot be null or empty
+                </div>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label> Password</mat-label>
+                    <input matInput type="Password" formControlName="password" placeholder="Your Password">
+                  </mat-form-field>
+                <!-- <label>
+                    Password:
+                    <input type="password" formControlName="password" placeholder="Your password">
+                </label> -->
+                <div *ngIf="submissionAttempted && myForm.get('password')?.invalid && (myForm.get('password')?.touched || showError)" class="error">
+                    Password cannot be null or empty
+                </div>
+            </div>
+            <div>
+                <button class="row-btn" mat-raised-button type="submit">Login</button>
+            </div>
+            <div>
+                <button class="row-btn" mat-raised-button routerLink="/sign-up">Join our family >>> Sign Up</button>
+            </div>
+        </form>
+    </div>
+</section>

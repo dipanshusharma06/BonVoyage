@@ -1,0 +1,43 @@
+.container{
+    background-color: #09263d;
+    height: 88vh;
+    padding: 2%;
+}
+mat-expansion-panel{
+    margin: 1%;
+    background-color: #f6f4eb;
+}
+
+mat-panel-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Cedarville Cursive';
+}
+
+mat-panel-title, mat-panel-description, mat-panel-header, div{
+    color: #1c4668;
+    font-weight: bold;
+}
+
+.expansion-div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.expansion-itenary{
+    display: flex;
+    flex-direction: column;
+}
+
+.expansion-itenary-header{
+    background-color: #09263d;
+    color: #09263d;
+    width: fit-content;
+    padding: 0.5%;
+    border-radius: 6% 12%;
+}
+
+div{
+    color: #09263d;
+}

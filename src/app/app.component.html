@@ -1,0 +1,18 @@
+<div class="container">
+  <nav>
+    <div>
+      <img class="logo" src="../assets/images/logo3.png" alt="brand-logo">
+    </div>
+    <ul class="nav-bar">
+      <li class="nav-link" routerLink="/home">Home</li>
+      <li class="nav-link" routerLink="/packages" *ngIf="currentRoute !='/faq' && currentRoute != '/home' && currentRoute != '/sign-in' && currentRoute != '/sign-up'">Packages</li>
+      <li class="nav-link" routerLink="/bookings" *ngIf="currentRoute !='/faq' && currentRoute != '/home' && currentRoute != '/sign-in' && currentRoute != '/sign-up'">My bookings</li>
+      <li class="nav-link" routerLink="/wishlist" *ngIf="currentRoute !='/faq' && currentRoute != '/home' && currentRoute != '/sign-in' && currentRoute != '/sign-up'">Wishlist</li>
+      <li class="nav-link" routerLink="/faq">FAQ</li>
+      <button class="nav-btn" mat-stroked-button *ngIf="currentRoute !='/packages' && currentRoute != '/bookings' && currentRoute != '/wishlist'" routerLink="/sign-up">Login/SignUp</button>
+    </ul>
+  </nav>  
+  <div class="component-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

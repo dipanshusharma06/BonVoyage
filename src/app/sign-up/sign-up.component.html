@@ -1,0 +1,137 @@
+<section>
+  <div class="quote-container">
+    <h2> <span> <i>"The world is a book, and those who do not travel read only one page"</i></span></h2>
+    <p>- Saint Augustine</p>
+  </div>
+  
+  <div class="form-container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <h1>Welcome To BonVoyage!</h1>
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> What should we call you ?</mat-label>
+            <input matInput formControlName="name" placeholder="Your name">
+          </mat-form-field>
+          <!-- <label>
+            What should we call you?:
+            <input formControlName="name" placeholder="Your name">
+          </label> -->
+          <div *ngIf="submissionAttempted && myForm.get('name')?.invalid && (myForm.get('name')?.touched || showError)" class="error">
+            Name cannot be null or empty
+          </div>
+        </div>
+        
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label> What's your Email?</mat-label>
+            <input matInput formControlName="email" placeholder="Your email">
+          </mat-form-field>
+          <!-- <label>
+            What's your Email?
+            <input formControlName="email" placeholder="Your email">
+          </label> -->
+          <div *ngIf="submissionAttempted && myForm.get('email')?.invalid && (myForm.get('email')?.touched || showError)" class="error">
+            <div *ngIf="myForm.get('email')?.errors?.['required']">Email cannot be null or empty</div>
+            <div *ngIf="myForm.get('email')?.errors?.['email']">Must be a valid email</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a strong password</mat-label>
+            <input matInput formControlName="password" placeholder="Your password">
+          </mat-form-field>
+          
+          <!-- <label>
+            Choose a strong password.
+            <input type="password" formControlName="password" placeholder="Your password">
+          </label> -->
+          <div *ngIf="submissionAttempted && myForm.get('password')?.invalid && (myForm.get('password')?.touched || showError)" class="error">
+            <div *ngIf="myForm.get('password')?.errors?.['required']">Password cannot be null or empty</div>
+            <div *ngIf="myForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</div>
+          </div>
+        </div>
+        
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="password" placeholder="Confirm password">
+          </mat-form-field>
+          <!-- <label>
+            Confirm Password.
+            <input type="password" formControlName="confirm" placeholder="Confirm password">
+          </label> -->
+          <div *ngIf="submissionAttempted && myForm.get('confirm')?.invalid && (myForm.get('confirm')?.touched || showError)" class="error">
+            <div *ngIf="myForm.get('confirm')?.errors?.['required']">Confirm Password cannot be null or empty</div>
+            <div *ngIf="myForm.get('confirm')?.errors?.['passwordMismatch']">Passwords do not match</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>How should we contact you ?</mat-label>
+          <input matInput formControlName="phone" placeholder="Phone no">
+        </mat-form-field>
+        <!-- <label>
+          How should we contact you?
+          <input formControlName="phone" placeholder="Phone no.">
+        </label> -->
+        <div *ngIf="submissionAttempted && myForm.get('phone')?.invalid && (myForm.get('phone')?.touched || showError)" class="error">
+          <div *ngIf="myForm.get('phone')?.errors?.['required']">Phone cannot be null or empty</div>
+          <div *ngIf="myForm.get('phone')?.errors?.['pattern']">Invalid phone number format</div>
+        </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="row">
+        <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Where do you live ?</mat-label>
+          <textarea matInput formControlName="address" placeholder="Your address" cols="10" rows="4"></textarea>
+        </mat-form-field>
+        <!-- <label>
+          Where do you live?
+          <textarea formControlName="address" placeholder="Your address" cols="4" rows="4"></textarea>
+        </label> -->
+        <div *ngIf="submissionAttempted && myForm.get('address')?.invalid && (myForm.get('address')?.touched || showError)" class="error">
+          Address cannot be null or empty
+        </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <button class="row-btn" mat-raised-button type="submit">Register</button>
+      </div>
+
+      <div class="row">
+        <button class="row-btn" mat-raised-button routerLink="/sign-in">Already our Family >>> Login here</button>
+      </div>
+    </form>
+    
+    <div *ngIf="showMessage" class="success-message" style="color: green;font-size: larger;
+    font-weight: bolder;
+    text-align: center;">
+      {{ Message }}
+    </div>
+    
+    <div *ngIf="showError && errorResponse" class="error-message"  style="color: red;font-size: larger;
+    font-weight: bolder;
+    text-align: center;">
+      {{ errorResponse }}
+    </div>
+  </div>
+</section>

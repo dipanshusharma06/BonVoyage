@@ -1,0 +1,57 @@
+*{
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.package-container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f6f4eb;
+}
+
+.destinations{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3%;
+    gap: 4%;
+    flex: 1;
+}
+
+mat-card-title{
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+mat-card-subtitle{
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Cedarville Cursive';
+    color: #f6f4eb;
+}
+
+mat-card-header{
+    display: flex;
+    justify-content: space-around;
+}
+
+mat-button{
+    color: #1c4668;
+    background-color: #f6f4eb;
+}
+
+
+.card{
+    background-color: 	#1c4668;
+    height: 40vh;
+    width: 36vw;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.6rem;
+    margin-bottom: 4%;
+}
+
+.card-image{
+    width: 100%;
+    max-height: 20vh;
+    margin-bottom: 2%;
+}

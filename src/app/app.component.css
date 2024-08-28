@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/images/home-background.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.component-container{
+    height: 88vh;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    height: 12vh;
+    width: 100vw;
+    padding: 0% 4%;
+}
+
+.nav-bar{
+    display: flex;
+    width: 60%;
+    justify-content: flex-end;
+    gap: 7%;
+    color: #f6f4eb;
+}
+
+.nav-btn{
+    background-color: #1c4668;
+    color: #f6f4eb;
+}
+
+.nav-btn:hover{
+    background-color: transparent;
+    color: #1c4668;
+}
+
+.logo{
+    width: 40%;
+}
+
+.nav-link{
+    list-style: none;
+    align-self: center;
+}
+
+.nav-link:hover{
+    font-weight: 900;
+    transform: scale 110%;
+    cursor: pointer;
+}

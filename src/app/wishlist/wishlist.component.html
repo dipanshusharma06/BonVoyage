@@ -1,0 +1,26 @@
+<div class="wishlist-container">
+    <div class="destinations">
+        <div *ngFor="let userPackage of userPackagesList">
+            <mat-card class="card">
+                <mat-card-header>
+                  <div>
+                    <mat-card-title>{{userPackage.packageName}}</mat-card-title>
+                    <mat-card-subtitle>{{userPackage.packageCity}}, {{userPackage.packageCountry}}</mat-card-subtitle>
+                  </div>
+                  <div>
+                    <button mat-mini-fab color="warn" (click)="deletePackageFromWishlist(userPackage.packageID)"><mat-icon>delete</mat-icon></button>
+                  </div>
+                </mat-card-header>
+                <img class="card-image" mat-card-image [src]="'../../assets/images/' + userPackage.packageImage" alt="">
+                <mat-card-content>
+                  <p>{{userPackage.packageDesc}}</p>
+                  <p>Rating : {{userPackage.packageRating}}</p>
+                  <p>Review : {{userPackage.packageReviews}}</p>
+                  <p>Price : {{userPackage.packagePrice}}</p>
+                  <p>Duration : {{userPackage.packageDuration}}</p>
+                  <p>Available date: {{userPackage.availableDate}}</p>
+                </mat-card-content>
+              </mat-card>
+        </div>
+    </div>
+</div>
